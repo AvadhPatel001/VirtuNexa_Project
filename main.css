@@ -7,6 +7,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
+
+/* navigation bar */
 .nav-menu li {
     list-style: none;
 }
@@ -63,62 +65,8 @@ body {
     background-color: black;
 }
 
-@media(max-width:768px) {
-    .hamburger {
-        display: block;
-    }
+/* navigation bar */
 
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-menu {
-        display: block;
-        position: fixed;
-        left: -150%;
-        top: -20px;
-        gap: 0;
-        background-color: #444444;
-        width: 40%;
-        height: 100%;
-        transition: 0.5s ease-in-out;
-        z-index: 1;
-        padding: 20px 0;
-        text-align: center;
-    }
-
-    .nav-item {
-        width: 100%;
-        padding: 20px 0;
-        border-bottom: 1px solid #747474;
-    }
-    .nav-item:hover{
-        background-color: #747474;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-link {
-        color: rgb(255, 255, 255);
-        font-size: 20px;
-
-    }
-    .nav-link:hover {
-        color: white;
-        background-color: #44444400;
-    }    
-
-}
 
 
 /* section 1,2 */
@@ -144,3 +92,70 @@ body {
 }
 
 /* section 1,2 */
+
+
+
+
+
+@media(max-width:768px) {
+    
+    
+    /* navigation bar */
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-menu {
+        display: block;
+        position: fixed;
+        left: -150%;
+        top: -20px;
+        gap: 0;
+        background-color: #444444;
+        width: 40%;
+        height: 100%;
+        transition: 0.5s ease-in-out;
+        z-index: 1;
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+    .nav-item {
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 1px solid #747474;
+    }
+    .nav-item:hover{
+        background-color: #747474;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        
+    }
+    .nav-link:hover {
+        color: white;
+        background-color: #44444400;
+    }    
+    
+    /* navigation bar */
+}
+
