@@ -1,0 +1,146 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-branding {
+    margin-top: 10px;
+    font-size: 3rem;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    transition: 0.3s ease;
+    padding: 10px;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: #444444;
+    border-radius: 10px;
+    text-decoration: underline;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+@media(max-width:768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        display: block;
+        position: fixed;
+        left: -150%;
+        top: -20px;
+        gap: 0;
+        background-color: #444444;
+        width: 40%;
+        height: 100%;
+        transition: 0.5s ease-in-out;
+        z-index: 1;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .nav-item {
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 1px solid #747474;
+    }
+    .nav-item:hover{
+        background-color: #747474;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+
+    }
+    .nav-link:hover {
+        color: white;
+        background-color: #44444400;
+    }    
+
+}
+
+
+/* section 1,2 */
+
+.section1,
+.section2 {
+    width: 90%;
+    height: 500px;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    background-color: #b3b3b3;
+    margin: 50px 0;
+    z-index: 0;
+}
+
+.section1 h1,
+.section2 h1 {
+    color: #303030;
+}
+
+/* section 1,2 */
