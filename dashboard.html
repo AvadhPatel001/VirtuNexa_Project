@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .main-content header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin:0 10px 20px 10px;
+        }
+        .profileImg{
+            width: 7%;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        .dashboard {
+            display: flex;
+            width: 100%;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .widgets {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .widget {
+            background: linear-gradient(160deg, #d5ebff, #ffdbe3);
+            padding: 20px;
+            flex: 1 1 calc(45% - 20px);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+
+        .widget:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="dashboard.html" class="nav-branding">Fashion</a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#section1" class="nav-link">Section 1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#section2" class="nav-link">Section 2</a>
+                </li>
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="dashboard">
+        
+        <main class="main-content">
+            <header>
+                <h1>Welcome, ABC</h1>
+                <img src="Images/profileImg.png" alt="profileImg" class="profileImg">
+            </header>
+            <section class="widgets">
+                <div class="widget" id="tasks">
+                    <h3>Tasks</h3>
+                    <ul id="task-list"></ul>
+                </div>
+                <div class="widget" id="messages">
+                    <h3>Messages</h3>
+                    <ul id="message-list"></ul>
+                </div>
+                <div class="widget" id="notifications">
+                    <h3>Notifications</h3>
+                    <ul id="notification-list"></ul>
+                </div>
+                <div class="widget" id="order-history">
+                    <h3>Order History</h3>
+                    <ul id="order-history-list"></ul>
+                </div>
+                <div class="widget" id="wishlist">
+                    <h3>Wishlist</h3>
+                    <ul id="wishlist-list"></ul>
+                </div>
+                <div class="widget" id="account-settings">
+                    <h3>Account Settings</h3>
+                    <p><a href="#">Edit Profile</a></p>
+                    <p><a href="#">Change Password</a></p>
+                    <p><a href="#">Manage Addresses</a></p>
+                </div>
+                <div class="widget" id="payment-methods">
+                    <h3>Payment Methods</h3>
+                    <p>Saved Cards: **** **** **** 1234</p>
+                    <p><a href="#">Manage Payment Options</a></p>
+                </div>
+                <div class="widget" id="customer-support">
+                    <h3>Customer Support</h3>
+                    <p><a href="#">FAQs</a></p>
+                    <p><a href="#">Contact Support</a></p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tasks = ["Task 1", "Task 2", "Task 3"];
+            const message = ["New Message 1", "New Message 2", "New Message 3"];
+            const notifications = ["New notification 1", "New notification 2", "New notification 3"];
+            const orderHistory = ["Order 1 - Delivered", "Order 2 - Processing", "Order 3 - Cancelled"];
+            const wishlist = ["Product A", "Product B", "Product C"];
+
+            function populateList(id, items) {
+                const list = document.getElementById(id);
+                items.forEach(item => {
+                    const li = document.createElement("li");
+                    li.textContent = item;
+                    list.appendChild(li);
+                });
+            }
+
+            populateList("tasks", tasks);
+            populateList("messages", message);
+            populateList("notifications", notifications);
+            populateList("order-history-list", orderHistory);
+            populateList("wishlist-list", wishlist);
+
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

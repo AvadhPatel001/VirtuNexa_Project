@@ -4,6 +4,7 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
 }
 
@@ -18,36 +19,35 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 24px;
+    padding: 10px 24px;
+    background-color: #444444;
 }
 
 .nav-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 60px;
+    gap: 4vw;
 }
 
 .nav-branding {
-    margin-top: 10px;
     font-size: 3rem;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .nav-link {
     font-size: 1.2rem;
-    color: black;
+    color: white;
     text-decoration: none;
     transition: 0.3s ease;
     padding: 10px;
 }
 
 .nav-link:hover {
-    color: white;
-    background-color: #444444;
+    color: black;
+    background-color: #dddddd;
     border-radius: 10px;
-    text-decoration: underline;
 }
 
 .hamburger {
@@ -62,7 +62,7 @@ body {
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: black;
+    background-color: white;
 }
 
 /* navigation bar */
@@ -76,7 +76,7 @@ body {
     width: 90%;
     height: 500px;
     position: relative;
-    top: 0;
+    top: 100px;
     left: 50%;
     transform: translate(-50%);
     display: flex;
@@ -155,6 +155,7 @@ body {
         color: white;
         background-color: #44444400;
     }    
+    
     
     /* navigation bar */
 }
