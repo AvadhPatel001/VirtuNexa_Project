@@ -7,19 +7,22 @@
     <title>Fashion</title>
     <link rel="stylesheet" href="style.css">
 
-    
+
 </head>
 
 <body>
     <!-- nevbar -->
-    
+
     <header>
         <nav class="navbar">
             <h1 class="nav-branding" id="logo">Fashion</h1>
-            
+
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#ImgCarosuel" class="nav-link">Thumbnails</a>
                 </li>
                 <li class="nav-item">
                     <a href="#section1" class="nav-link">Section 1</a>
@@ -42,7 +45,29 @@
 
     <!-- nevbar -->
 
-    
+
+    <!-- Thumbnail Carousel -->
+
+    <div class="container" id="ImgCarosuel">
+        <div class="main-image">
+            <img id="displayedImage" src="Images/img1.jpg" alt="Displayed Image">
+        </div>
+
+        <div class="carousel">
+            <button id="prevBtn">&#10094;</button>
+            <div class="thumbnails">
+                <img class="thumb" src="Images/img1.jpg" alt="Thumbnail 1" onclick="changeImage('Images/img1.jpg')">
+                <img class="thumb" src="Images/img2.jpg" alt="Thumbnail 2" onclick="changeImage('Images/img2.jpg')">
+                <img class="thumb" src="Images/img3.jpg" alt="Thumbnail 3" onclick="changeImage('Images/img3.jpg')">
+                <img class="thumb" src="Images/img4.jpg" alt="Thumbnail 4" onclick="changeImage('Images/img4.jpg')">
+                <img class="thumb" src="Images/img5.jpg" alt="Thumbnail 5" onclick="changeImage('Images/img5.jpg')">
+            </div>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Thumbnail Carousel -->
+
     <div class="section1" id="section1">
         <h1>Section 1</h1>
     </div>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnail Carousel</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .main-image img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .thumbnails {
+            display: flex;
+            overflow-x: auto;
+            width: 90%;
+            justify-content: space-evenly;
+            gap: 20px;
+            padding: 10px;
+            scroll-behavior: smooth;
+
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .thumbnails::-webkit-scrollbar {
+            display: none;
+        }
+
+        .thumbnails img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, border 0.3s;
+        }
+
+        .thumbnails img:hover {
+            transform: scale(1.1);
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px #00000094;
+        }
+
+        .thumbnails img.active {
+            transform: scale(1.1);
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px #00000094;
+        }
+
+
+        button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="main-image">
+            <img id="displayedImage" src="Images/img1.jpg" alt="Displayed Image">
+        </div>
+
+        <div class="carousel">
+            <button id="prevBtn">&#10094;</button>
+            <div class="thumbnails">
+                <img class="thumb" src="Images/img1.jpg" alt="Thumbnail 1" onclick="changeImage('Images/img1.jpg')">
+                <img class="thumb" src="Images/img2.jpg" alt="Thumbnail 2" onclick="changeImage('Images/img2.jpg')">
+                <img class="thumb" src="Images/img3.jpg" alt="Thumbnail 3" onclick="changeImage('Images/img3.jpg')">
+                <img class="thumb" src="Images/img4.jpg" alt="Thumbnail 4" onclick="changeImage('Images/img4.jpg')">
+                <img class="thumb" src="Images/img5.jpg" alt="Thumbnail 5" onclick="changeImage('Images/img5.jpg')">
+            </div>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const thumbnails = document.querySelectorAll(".thumb");
+        const displayedImage = document.getElementById("displayedImage");
+
+        let currentIndex = 0;
+
+        function updateImage(index) {
+            displayedImage.style.opacity = "0";
+
+            setTimeout(() => {
+                displayedImage.src = thumbnails[index].src;
+                displayedImage.style.opacity = "1";
+            }, 300);
+
+            thumbnails.forEach(thumb => thumb.classList.remove("active"));
+
+            thumbnails[index].classList.add("active");
+
+            currentIndex = index; 
+        }
+
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener("click", () => updateImage(index));
+        });
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+            updateImage(currentIndex);
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            updateImage(currentIndex);
+        });
+
+        updateImage(currentIndex);
+
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+            document.querySelector(".thumbnails").scrollBy({ left: -100, behavior: "smooth" });
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+            document.querySelector(".thumbnails").scrollBy({ left: 100, behavior: "smooth" });
+        });
+
+    </script>
+
+</body>
+
+</html>
